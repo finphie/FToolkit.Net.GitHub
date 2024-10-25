@@ -19,7 +19,7 @@ partial class GitHubClient : IRepositoryBranchesClient
         ArgumentException.ThrowIfNullOrEmpty(branch);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PutAsJsonAsync(new Uri($"/repos/{owner}/{name}/branches/{branch}/protection", UriKind.Relative), entity, (System.Text.Json.Serialization.Metadata.JsonTypeInfo<BranchProtection>)JsonContext.Default.GitHubBranchProtection, cancellationToken)
+        var response = await _client.PutAsJsonAsync(new Uri($"/repos/{owner}/{name}/branches/{branch}/protection", UriKind.Relative), entity, JsonContext.Default.BranchProtection, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }
