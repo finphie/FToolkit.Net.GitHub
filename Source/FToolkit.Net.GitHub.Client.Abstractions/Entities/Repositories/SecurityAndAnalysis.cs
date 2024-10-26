@@ -1,0 +1,17 @@
+﻿namespace FToolkit.Net.GitHub.Client.Entities.Repositories;
+
+/// <summary>
+/// セキュリティ機能と分析機能に関する設定を表すクラスです。
+/// </summary>
+public sealed record SecurityAndAnalysis
+{
+    /// <summary>
+    /// シークレットスキャンに関する設定。
+    /// </summary>
+    public required SecretScanning SecretScanning { get; init; }
+
+    /// <summary>
+    /// シークレットスキャンのプッシュ保護に関する設定。
+    /// </summary>
+    public required SecretScanningPushProtection SecretScanningPushProtection { get; init; }
+}
