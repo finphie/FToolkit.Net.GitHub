@@ -6,6 +6,11 @@
 public sealed record Repository
 {
     /// <summary>
+    /// リポジトリに対して有効または無効にするセキュリティ機能と分析機能を指定します。
+    /// </summary>
+    public RepositorySecurityAndAnalysis? SecurityAndAnalysis { get; init; }
+
+    /// <summary>
     /// Issuesを有効にするかどうか。
     /// </summary>
     public bool? HasIssues { get; init; }

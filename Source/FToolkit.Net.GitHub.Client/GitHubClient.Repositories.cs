@@ -1,5 +1,5 @@
 ﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Client.Entities;
+using FToolkit.Net.GitHub.Client.Entities.Repositories;
 
 namespace FToolkit.Net.GitHub.Client;
 
