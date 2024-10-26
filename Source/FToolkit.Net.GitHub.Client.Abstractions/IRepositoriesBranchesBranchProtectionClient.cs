@@ -5,7 +5,7 @@ namespace FToolkit.Net.GitHub.Client;
 /// <summary>
 /// リポジトリのブランチ保護に関する操作を提供するインターフェイスです。
 /// </summary>
-public interface IRepositoryBranchesClient
+public interface IRepositoriesBranchesBranchProtectionClient
 {
     /// <summary>
     /// ブランチ保護に関する設定を更新します。

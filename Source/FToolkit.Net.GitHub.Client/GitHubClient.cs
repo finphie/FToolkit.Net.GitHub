@@ -43,6 +43,9 @@ public sealed partial class GitHubClient : IDisposable, IGitHubClient
         };
     }
 
+    /// <inheritdoc/>
+    public IRepositoriesClient Repositories => this;
+
     /// <summary>
     /// GitHub APIにアクセスするためのトークン。
     /// </summary>

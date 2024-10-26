@@ -9,4 +9,4 @@ public sealed record SecretScanningPushProtection
     /// シークレットスキャンのプッシュ保護を有効にするかどうか。
     /// </summary>
     public Status? Status { get; init; }
-} 
+}
