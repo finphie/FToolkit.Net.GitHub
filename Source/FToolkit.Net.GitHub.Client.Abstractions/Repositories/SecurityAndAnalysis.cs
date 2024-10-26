@@ -8,10 +8,10 @@ public sealed record SecurityAndAnalysis
     /// <summary>
     /// シークレットスキャンに関する設定。
     /// </summary>
-    public required SecretScanning SecretScanning { get; init; }
+    public SecretScanning? SecretScanning { get; init; }
 
     /// <summary>
     /// シークレットスキャンのプッシュ保護に関する設定。
     /// </summary>
-    public required SecretScanningPushProtection SecretScanningPushProtection { get; init; }
+    public SecretScanningPushProtection? SecretScanningPushProtection { get; init; }
 }
