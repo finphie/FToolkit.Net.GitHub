@@ -10,7 +10,7 @@ public interface IRepositoriesClient
     /// <summary>
     /// ブランチに関する操作を提供するクライアントです。
     /// </summary>
-    IBranchesClient Branch { get; }
+    IBranchesClient Branches { get; }
 
     /// <summary>
     /// リポジトリに関する設定を更新します。

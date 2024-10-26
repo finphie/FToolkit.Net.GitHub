@@ -9,7 +9,7 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IRepositoriesClient
 {
     /// <inheritdoc/>
-    IBranchesClient IRepositoriesClient.Branch => this;
+    IBranchesClient IRepositoriesClient.Branches => this;
 
     /// <inheritdoc/>
     Task IRepositoriesClient.UpdateAsync(string owner, string name, Repository entity, CancellationToken cancellationToken)
