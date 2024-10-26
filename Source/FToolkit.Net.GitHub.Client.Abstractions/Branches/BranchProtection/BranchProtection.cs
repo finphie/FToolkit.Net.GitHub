@@ -10,7 +10,8 @@ public sealed record BranchProtection
     /// <summary>
     /// 管理者にも適用するかどうか。
     /// </summary>
-    public bool EnforceAdmins { get; init; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
+    public bool? EnforceAdmins { get; init; }
 
     /// <summary>
     /// 直線状の履歴を必須にするかどうか。

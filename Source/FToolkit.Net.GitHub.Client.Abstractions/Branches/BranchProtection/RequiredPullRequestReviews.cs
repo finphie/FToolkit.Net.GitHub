@@ -8,15 +8,15 @@ public sealed record RequiredPullRequestReviews
     /// <summary>
     /// 新しいコミットがプッシュされたときに、承認済みのレビューを却下するかどうか。
     /// </summary>
-    public bool DismissStaleReviews { get; init; }
+    public bool? DismissStaleReviews { get; init; }
 
     /// <summary>
     /// コード所有者のレビューが必須かどうか。
     /// </summary>
-    public bool RequireCodeOwnerReviews { get; init; }
+    public bool? RequireCodeOwnerReviews { get; init; }
 
     /// <summary>
     /// プルリクエストの承認に必要なレビュアーの数。
     /// </summary>
-    public int RequiredApprovingReviewCount { get; init; } = 1;
+    public int? RequiredApprovingReviewCount { get; init; }
 }

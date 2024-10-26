@@ -13,5 +13,5 @@ public sealed record RequiredStatusChecks
     /// <summary>
     /// 合格する必要があるステータスチェックのリスト。
     /// </summary>
-    public IReadOnlyList<string>? Contexts { get; init; }
+    public IReadOnlyList<string> Contexts { get; init; } = [];
 }
