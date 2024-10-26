@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities.Repositories;
+﻿namespace FToolkit.Net.GitHub.Client.Repositories;
 
 /// <summary>
 /// シークレットスキャンの設定を表すクラスです。

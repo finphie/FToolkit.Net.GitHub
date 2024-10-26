@@ -1,15 +1,15 @@
 ﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
+using FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 
 namespace FToolkit.Net.GitHub.Client;
 
 /// <summary>
-/// <see cref="IRepositoriesBranchesBranchProtectionClient"/>を実装する部分クラスです。
+/// <see cref="IBranchProtectionClient"/>を実装する部分クラスです。
 /// </summary>
-partial class GitHubClient : IRepositoriesBranchesBranchProtectionClient
+partial class GitHubClient : IBranchProtectionClient
 {
     /// <inheritdoc/>
-    async Task IRepositoriesBranchesBranchProtectionClient.UpdateBranchProtectionAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken)
+    async Task IBranchProtectionClient.UpdateBranchProtectionAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
@@ -22,7 +22,7 @@ partial class GitHubClient : IRepositoriesBranchesBranchProtectionClient
     }
 
     /// <inheritdoc/>
-    async Task IRepositoriesBranchesBranchProtectionClient.DeleteBranchProtectionAsync(string owner, string name, string branch, CancellationToken cancellationToken)
+    async Task IBranchProtectionClient.DeleteBranchProtectionAsync(string owner, string name, string branch, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);

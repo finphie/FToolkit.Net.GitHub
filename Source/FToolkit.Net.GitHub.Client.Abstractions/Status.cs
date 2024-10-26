@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client;
 
 /// <summary>
 /// 有効または無効を表す列挙型です。

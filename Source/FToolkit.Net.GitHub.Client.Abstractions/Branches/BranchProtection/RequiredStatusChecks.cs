@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
+﻿namespace FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 
 /// <summary>
 /// ステータスチェックに関するブランチ保護の設定を表すクラスです。

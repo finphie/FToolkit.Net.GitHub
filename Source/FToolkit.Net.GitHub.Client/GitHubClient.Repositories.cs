@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Client.Entities.Repositories;
+using FToolkit.Net.GitHub.Client.Branches;
+using FToolkit.Net.GitHub.Client.Repositories;
 
 namespace FToolkit.Net.GitHub.Client;
 
@@ -9,7 +10,7 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IRepositoriesClient
 {
     /// <inheritdoc/>
-    IRepositoriesBranchesClient IRepositoriesClient.Branch => this;
+    IBranchesClient IRepositoriesClient.Branch => this;
 
     /// <inheritdoc/>
     async Task IRepositoriesClient.UpdateAsync(string owner, string name, Repository entity, CancellationToken cancellationToken)

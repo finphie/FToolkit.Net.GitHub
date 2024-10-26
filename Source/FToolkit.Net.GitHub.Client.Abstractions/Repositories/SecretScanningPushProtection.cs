@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities.Repositories;
+﻿namespace FToolkit.Net.GitHub.Client.Repositories;
 
 /// <summary>
 /// シークレットスキャンのプッシュ保護に関する設定を表すクラスです。

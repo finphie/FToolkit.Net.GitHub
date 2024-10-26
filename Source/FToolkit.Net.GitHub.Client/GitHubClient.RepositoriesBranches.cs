@@ -1,10 +1,13 @@
-﻿namespace FToolkit.Net.GitHub.Client;
+﻿using FToolkit.Net.GitHub.Client.Branches;
+using FToolkit.Net.GitHub.Client.Branches.BranchProtection;
+
+namespace FToolkit.Net.GitHub.Client;
 
 /// <summary>
-/// <see cref="IRepositoriesBranchesClient"/>を実装する部分クラスです。
+/// <see cref="IBranchesClient"/>を実装する部分クラスです。
 /// </summary>
-partial class GitHubClient : IRepositoriesBranchesClient
+partial class GitHubClient : IBranchesClient
 {
     /// <inheritdoc/>
-    IRepositoriesBranchesBranchProtectionClient IRepositoriesBranchesClient.BranchProtection => this;
+    IBranchProtectionClient IBranchesClient.BranchProtection => this;
 }

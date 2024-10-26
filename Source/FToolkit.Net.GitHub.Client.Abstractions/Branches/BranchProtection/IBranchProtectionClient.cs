@@ -1,11 +1,9 @@
-﻿using FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
-
-namespace FToolkit.Net.GitHub.Client;
+﻿namespace FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 
 /// <summary>
 /// リポジトリのブランチ保護に関する操作を提供するインターフェイスです。
 /// </summary>
-public interface IRepositoriesBranchesBranchProtectionClient
+public interface IBranchProtectionClient
 {
     /// <summary>
     /// ブランチ保護に関する設定を更新します。

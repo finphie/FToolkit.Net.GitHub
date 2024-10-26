@@ -1,4 +1,6 @@
-﻿namespace FToolkit.Net.GitHub.Client;
+﻿using FToolkit.Net.GitHub.Client.Repositories;
+
+namespace FToolkit.Net.GitHub.Client;
 
 /// <summary>
 /// GitHub APIのクライアント。

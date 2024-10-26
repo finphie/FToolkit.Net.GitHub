@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
-using FToolkit.Net.GitHub.Client.Entities.Repositories;
+using FToolkit.Net.GitHub.Client.Branches.BranchProtection;
+using FToolkit.Net.GitHub.Client.Repositories;
 
 namespace FToolkit.Net.GitHub.Client;
 
