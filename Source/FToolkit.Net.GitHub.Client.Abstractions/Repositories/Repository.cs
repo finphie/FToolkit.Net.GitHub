@@ -63,20 +63,20 @@ public sealed record Repository
     /// <summary>
     /// マージにおけるコミットタイトルの種類。
     /// </summary>
-    public string? MergeCommitTitle { get; init; }
+    public MergeCommitTitle? MergeCommitTitle { get; init; }
 
     /// <summary>
     /// マージにおけるコミットメッセージの種類。
     /// </summary>
-    public string? MergeCommitMessage { get; init; }
+    public MergeCommitMessage? MergeCommitMessage { get; init; }
 
     /// <summary>
     /// スカッシュマージにおけるコミットタイトルの種類。
     /// </summary>
-    public string? SquashMergeCommitTitle { get; init; }
+    public SquashMergeCommitTitle? SquashMergeCommitTitle { get; init; }
 
     /// <summary>
     /// スカッシュマージにおけるコミットメッセージの種類。
     /// </summary>
-    public string? SquashMergeCommitMessage { get; init; }
+    public SquashMergeCommitMessage? SquashMergeCommitMessage { get; init; }
 }
