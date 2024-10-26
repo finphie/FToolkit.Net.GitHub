@@ -9,7 +9,7 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IBranchProtectionClient
 {
     /// <inheritdoc/>
-    async Task IBranchProtectionClient.UpdateBranchProtectionAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken)
+    async Task IBranchProtectionClient.UpdateAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
@@ -22,7 +22,7 @@ partial class GitHubClient : IBranchProtectionClient
     }
 
     /// <inheritdoc/>
-    async Task IBranchProtectionClient.DeleteBranchProtectionAsync(string owner, string name, string branch, CancellationToken cancellationToken)
+    async Task IBranchProtectionClient.DeleteAsync(string owner, string name, string branch, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);

@@ -20,7 +20,7 @@ public interface IBranchProtectionClient
     /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>、<paramref name="entity"/>がnullです。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
-    Task UpdateBranchProtectionAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken = default);
+    Task UpdateAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// ブランチ保護に関する設定を削除します。
@@ -36,5 +36,5 @@ public interface IBranchProtectionClient
     /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>がnullです。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
-    Task DeleteBranchProtectionAsync(string owner, string name, string branch, CancellationToken cancellationToken = default);
+    Task DeleteAsync(string owner, string name, string branch, CancellationToken cancellationToken = default);
 }
