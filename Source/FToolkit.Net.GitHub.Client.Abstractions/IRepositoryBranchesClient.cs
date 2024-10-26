@@ -1,4 +1,4 @@
-﻿using FToolkit.Net.GitHub.Client.Entities;
+﻿using FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
 
 namespace FToolkit.Net.GitHub.Client;
 

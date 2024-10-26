@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FToolkit.Net.GitHub.Client.Entities;
+namespace FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
 
 /// <summary>
 /// ブランチ保護に関する設定を表すクラスです。
@@ -36,13 +36,13 @@ public sealed record BranchProtection
     /// ステータスチェックに関するブランチ保護の設定。
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
-    public BranchProtectionRequiredStatusChecks? RequiredStatusChecks { get; init; }
+    public RequiredStatusChecks? RequiredStatusChecks { get; init; }
 
     /// <summary>
     /// レビューに関するブランチ保護の設定。
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
-    public BranchProtectionRequiredPullRequestReviews? RequiredPullRequestReviews { get; init; }
+    public RequiredPullRequestReviews? RequiredPullRequestReviews { get; init; }
 
     /// <summary>
     /// 保護されたブランチにプッシュできる人のリスト。

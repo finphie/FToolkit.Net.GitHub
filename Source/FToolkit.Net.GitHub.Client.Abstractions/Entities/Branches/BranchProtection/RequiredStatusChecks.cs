@@ -1,9 +1,9 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
 
 /// <summary>
 /// ステータスチェックに関するブランチ保護の設定を表すクラスです。
 /// </summary>
-public sealed record BranchProtectionRequiredStatusChecks
+public sealed record RequiredStatusChecks
 {
     /// <summary>
     /// マージする前にブランチを最新にする必要があるかどうか。

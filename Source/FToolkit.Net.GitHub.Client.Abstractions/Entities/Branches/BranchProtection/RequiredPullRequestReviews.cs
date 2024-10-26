@@ -1,9 +1,9 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client.Entities.Branches.BranchProtection;
 
 /// <summary>
 /// レビューに関するブランチ保護の設定を表すクラスです。
 /// </summary>
-public sealed record BranchProtectionRequiredPullRequestReviews
+public sealed record RequiredPullRequestReviews
 {
     /// <summary>
     /// 新しいコミットがプッシュされたときに、承認済みのレビューを却下するかどうか。
