@@ -1,9 +1,9 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 
 /// <summary>
 /// ステータスチェックに関するブランチ保護の設定を表すクラスです。
 /// </summary>
-public sealed record BranchProtectionRequiredStatusChecks
+public sealed record RequiredStatusChecks
 {
     /// <summary>
     /// マージする前にブランチを最新にする必要があるかどうか。
@@ -13,5 +13,5 @@ public sealed record BranchProtectionRequiredStatusChecks
     /// <summary>
     /// 合格する必要があるステータスチェックのリスト。
     /// </summary>
-    public IReadOnlyList<string>? Contexts { get; init; }
+    public IReadOnlyList<string> Contexts { get; init; } = [];
 }

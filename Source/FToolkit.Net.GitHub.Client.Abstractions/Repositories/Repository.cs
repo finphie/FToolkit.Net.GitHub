@@ -1,10 +1,15 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client.Repositories;
 
 /// <summary>
 /// リポジトリに関する設定を表すクラスです。
 /// </summary>
 public sealed record Repository
 {
+    /// <summary>
+    /// リポジトリに対して有効または無効にするセキュリティ機能と分析機能を指定します。
+    /// </summary>
+    public SecurityAndAnalysis? SecurityAndAnalysis { get; init; }
+
     /// <summary>
     /// Issuesを有効にするかどうか。
     /// </summary>
@@ -58,20 +63,20 @@ public sealed record Repository
     /// <summary>
     /// マージにおけるコミットタイトルの種類。
     /// </summary>
-    public string? MergeCommitTitle { get; init; }
+    public MergeCommitTitle? MergeCommitTitle { get; init; }
 
     /// <summary>
     /// マージにおけるコミットメッセージの種類。
     /// </summary>
-    public string? MergeCommitMessage { get; init; }
+    public MergeCommitMessage? MergeCommitMessage { get; init; }
 
     /// <summary>
     /// スカッシュマージにおけるコミットタイトルの種類。
     /// </summary>
-    public string? SquashMergeCommitTitle { get; init; }
+    public SquashMergeCommitTitle? SquashMergeCommitTitle { get; init; }
 
     /// <summary>
     /// スカッシュマージにおけるコミットメッセージの種類。
     /// </summary>
-    public string? SquashMergeCommitMessage { get; init; }
+    public SquashMergeCommitMessage? SquashMergeCommitMessage { get; init; }
 }

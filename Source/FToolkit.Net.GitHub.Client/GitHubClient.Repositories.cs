@@ -1,5 +1,5 @@
-﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Client.Entities;
+﻿using FToolkit.Net.GitHub.Client.Branches;
+using FToolkit.Net.GitHub.Client.Repositories;
 
 namespace FToolkit.Net.GitHub.Client;
 
@@ -9,17 +9,15 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IRepositoriesClient
 {
     /// <inheritdoc/>
-    public IRepositoriesClient Repositories => this;
+    IBranchesClient IRepositoriesClient.Branches => this;
 
     /// <inheritdoc/>
-    async Task IRepositoriesClient.UpdateAsync(string owner, string name, Repository entity, CancellationToken cancellationToken)
+    Task IRepositoriesClient.UpdateAsync(string owner, string name, Repository entity, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PatchAsJsonAsync(new Uri($"/repos/{owner}/{name}", UriKind.Relative), entity, JsonContext.Default.Repository, cancellationToken)
-            .ConfigureAwait(false);
-        response.EnsureSuccessStatusCode();
+        return PatchAsJsonAsync($"/repos/{owner}/{name}", entity, JsonContext.Default.Repository, cancellationToken);
     }
 }

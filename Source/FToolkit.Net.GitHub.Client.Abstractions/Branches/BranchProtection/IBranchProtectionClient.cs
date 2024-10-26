@@ -1,11 +1,9 @@
-﻿using FToolkit.Net.GitHub.Client.Entities;
-
-namespace FToolkit.Net.GitHub.Client;
+﻿namespace FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 
 /// <summary>
 /// リポジトリのブランチ保護に関する操作を提供するインターフェイスです。
 /// </summary>
-public interface IRepositoryBranchesClient
+public interface IBranchProtectionClient
 {
     /// <summary>
     /// ブランチ保護に関する設定を更新します。
@@ -22,7 +20,7 @@ public interface IRepositoryBranchesClient
     /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>、<paramref name="entity"/>がnullです。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
-    Task UpdateBranchProtectionAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken = default);
+    Task UpdateAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// ブランチ保護に関する設定を削除します。
@@ -38,5 +36,5 @@ public interface IRepositoryBranchesClient
     /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>がnullです。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
-    Task DeleteBranchProtectionAsync(string owner, string name, string branch, CancellationToken cancellationToken = default);
+    Task DeleteAsync(string owner, string name, string branch, CancellationToken cancellationToken = default);
 }
