@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Client.Entities;
+﻿namespace FToolkit.Net.GitHub.Client.Entities.Repositories;
 
 /// <summary>
 /// リポジトリに関する設定を表すクラスです。
@@ -8,7 +8,7 @@ public sealed record Repository
     /// <summary>
     /// リポジトリに対して有効または無効にするセキュリティ機能と分析機能を指定します。
     /// </summary>
-    public RepositorySecurityAndAnalysis? SecurityAndAnalysis { get; init; }
+    public SecurityAndAnalysis? SecurityAndAnalysis { get; init; }
 
     /// <summary>
     /// Issuesを有効にするかどうか。
