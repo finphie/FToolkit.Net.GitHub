@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json.Serialization.Metadata;
+using FToolkit.Net.GitHub.Client.Actions;
 using FToolkit.Net.GitHub.Client.Branches;
 using FToolkit.Net.GitHub.Client.Repositories;
 
@@ -59,6 +60,9 @@ public sealed partial class GitHubClient : IDisposable, IGitHubClient
 
     /// <inheritdoc/>
     public IBranchesClient Branches => this;
+
+    /// <inheritdoc/>
+    public IActionsClient Actions => this;
 
     /// <inheritdoc/>
     public void Dispose() => Client.Dispose();
