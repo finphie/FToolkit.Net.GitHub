@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using FToolkit.Net.GitHub.Client.Actions.Permissions;
 using FToolkit.Net.GitHub.Client.Branches.BranchProtection;
 using FToolkit.Net.GitHub.Client.Repositories;
 
@@ -12,4 +13,5 @@ namespace FToolkit.Net.GitHub.Client;
     UseStringEnumConverter = true)]
 [JsonSerializable(typeof(Repository))]
 [JsonSerializable(typeof(BranchProtection))]
+[JsonSerializable(typeof(RepositoryWorkflowPermissions))]
 public sealed partial class JsonContext : JsonSerializerContext;
