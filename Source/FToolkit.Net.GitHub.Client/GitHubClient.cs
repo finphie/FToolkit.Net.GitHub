@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Text.Json.Serialization.Metadata;
+using FToolkit.Net.GitHub.Client.Branches;
 using FToolkit.Net.GitHub.Client.Repositories;
 
 namespace FToolkit.Net.GitHub.Client;
@@ -48,13 +49,16 @@ public sealed partial class GitHubClient : IDisposable, IGitHubClient
     /// </summary>
     public HttpClient Client { get; }
 
-    /// <inheritdoc/>
-    public IRepositoriesClient Repositories => this;
-
     /// <summary>
     /// GitHub APIの認証に必要な資格情報。
     /// </summary>
     public required Credentials Credentials { get; init; }
+
+    /// <inheritdoc/>
+    public IRepositoriesClient Repositories => this;
+
+    /// <inheritdoc/>
+    public IBranchesClient Branches => this;
 
     /// <inheritdoc/>
     public void Dispose() => Client.Dispose();

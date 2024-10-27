@@ -1,17 +1,10 @@
-﻿using FToolkit.Net.GitHub.Client.Branches;
-
-namespace FToolkit.Net.GitHub.Client.Repositories;
+﻿namespace FToolkit.Net.GitHub.Client.Repositories;
 
 /// <summary>
 /// リポジトリに関する操作を提供するインターフェイスです。
 /// </summary>
 public interface IRepositoriesClient
 {
-    /// <summary>
-    /// ブランチに関する操作を提供するクライアントです。
-    /// </summary>
-    IBranchesClient Branches { get; }
-
     /// <summary>
     /// リポジトリに関する設定を更新します。
     /// </summary>
