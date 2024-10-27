@@ -19,4 +19,9 @@ public sealed record RequiredPullRequestReviews
     /// プルリクエストの承認に必要なレビュアーの数。
     /// </summary>
     public int? RequiredApprovingReviewCount { get; init; }
+
+    /// <summary>
+    /// 最新のプッシュを行ったユーザー以外が承認する必要があるかどうか。
+    /// </summary>
+    public bool? RequireLastPushApproval { get; init; }
 }
