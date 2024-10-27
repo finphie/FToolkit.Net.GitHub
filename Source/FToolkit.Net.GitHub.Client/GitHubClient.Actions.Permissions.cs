@@ -8,7 +8,7 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IPermissionsClient
 {
     /// <inheritdoc/>
-    Task IPermissionsClient.SetDefaultWorkflowPermissions(string owner, string name, RepositoryWorkflowPermissions entity, CancellationToken cancellationToken)
+    Task IPermissionsClient.SetDefaultWorkflowPermissionsAsync(string owner, string name, RepositoryWorkflowPermissions entity, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
