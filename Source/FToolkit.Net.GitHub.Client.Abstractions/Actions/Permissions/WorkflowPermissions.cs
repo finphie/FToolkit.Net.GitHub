@@ -1,4 +1,6 @@
-﻿namespace FToolkit.Net.GitHub.Client.Actions.Permissions;
+﻿using System.Text.Json.Serialization;
+
+namespace FToolkit.Net.GitHub.Client.Actions.Permissions;
 
 /// <summary>
 /// ワークフローのパーミッション。
@@ -8,10 +10,12 @@ public enum WorkflowPermissions
     /// <summary>
     /// 読み取り権限。
     /// </summary>
+    [JsonStringEnumMemberName("read")]
     Read,
 
     /// <summary>
     /// 書き込み権限。
     /// </summary>
+    [JsonStringEnumMemberName("write")]
     Write
 }
