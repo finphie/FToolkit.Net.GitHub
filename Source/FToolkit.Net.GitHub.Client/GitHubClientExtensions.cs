@@ -6,6 +6,17 @@
 public static class GitHubClientExtensions
 {
     /// <summary>
+    /// <see cref="HttpClient"/>クラスにGitHub APIの設定を適用します。
+    /// </summary>
+    /// <param name="client"><see cref="HttpClient"/>クラスのインスタンス</param>
+    /// <param name="credentials">GitHub APIの認証に必要な資格情報</param>
+    public static void ConfigureHttpClient(this HttpClient client, Credentials credentials)
+    {
+        client.BaseAddress = ApiEndpoints.GitHubApiUrl;
+        client.AddGitHubClientHeader(credentials);
+    }
+
+    /// <summary>
     /// <see cref="HttpClient"/>クラスにGitHub APIのヘッダーを追加します。
     /// </summary>
     /// <param name="client"><see cref="HttpClient"/>クラスのインスタンス</param>

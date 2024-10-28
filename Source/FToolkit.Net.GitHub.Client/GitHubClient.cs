@@ -9,13 +9,13 @@ namespace FToolkit.Net.GitHub.Client;
 /// </summary>
 public sealed partial class GitHubClient : IGitHubClient
 {
-    static readonly Uri GitHubApiUrl = new("https://api.github.com/");
     readonly HttpClient _client;
 
     /// <summary>
     /// <see cref="GitHubClient"/>クラスの新しいインスタンスを初期化します。
     /// </summary>
     /// <param name="client"><see cref="HttpClient"/>クラスのインスタンス</param>
+    /// <exception cref="ArgumentNullException"><paramref name="client"/>が<see langword="null"/>です。</exception>"
     public GitHubClient(HttpClient client)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -36,19 +36,16 @@ public sealed partial class GitHubClient : IGitHubClient
     /// </summary>
     /// <param name="credentials">GitHub APIの認証に必要な資格情報</param>
     /// <returns><see cref="GitHubClient"/>クラスのインスタンスを返します。</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="credentials"/>が<see langword="null"/>です。</exception>"
     public static GitHubClient Create(Credentials credentials)
     {
+        ArgumentNullException.ThrowIfNull(credentials);
+
         var client = CreateHttpClient();
-        client.AddGitHubClientHeader(credentials);
+        client.ConfigureHttpClient(credentials);
 
         return new(client);
     }
 
-    static HttpClient CreateHttpClient()
-    {
-        return new()
-        {
-            BaseAddress = GitHubApiUrl
-        };
-    }
+    static HttpClient CreateHttpClient() => new();
 }
