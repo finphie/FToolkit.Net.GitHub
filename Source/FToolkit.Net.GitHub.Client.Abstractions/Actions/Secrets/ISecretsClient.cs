@@ -15,10 +15,10 @@ public interface ISecretsClient
     /// <para>詳しくは、<a href="https://docs.github.com/ja/rest/actions/secrets?apiVersion=2022-11-28#get-a-repository-public-key">APIドキュメント</a>を参照してください。</para>
     /// </remarks>
     /// <returns>公開キーを返します。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>がnullです。</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>が<see langword="null"/>です。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
-    /// <exception cref="InvalidOperationException">HTTPレスポンスがnullです。</exception>
+    /// <exception cref="InvalidOperationException">HTTPレスポンスが<see langword="null"/>です。</exception>
     Task<PublicKey> GetPublicKeyAsync(string owner, string name, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -33,7 +33,7 @@ public interface ISecretsClient
     /// <para>詳しくは、<a href="https://docs.github.com/ja/rest/actions/secrets?apiVersion=2022-11-28#create-or-update-a-repository-secret">APIドキュメント</a>を参照してください。</para>
     /// </remarks>
     /// <returns>このメソッドが完了すると、オブジェクトまたは値は返されません。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="secretName"/>、<paramref name="entity"/>がnullです。</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="secretName"/>、<paramref name="entity"/>が<see langword="null"/>です。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="secretName"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
     Task CreateOrUpdateAsync(string owner, string name, string secretName, Secret entity, CancellationToken cancellationToken = default);

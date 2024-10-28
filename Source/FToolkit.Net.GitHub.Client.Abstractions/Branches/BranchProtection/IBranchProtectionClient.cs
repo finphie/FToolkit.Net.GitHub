@@ -17,7 +17,7 @@ public interface IBranchProtectionClient
     /// <para>詳しくは、<a href="https://docs.github.com/ja/rest/branches/branch-protection?apiVersion=2022-11-28#update-branch-protection">APIドキュメント</a>を参照してください。</para>
     /// </remarks>
     /// <returns>このメソッドが完了すると、オブジェクトまたは値は返されません。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>、<paramref name="entity"/>がnullです。</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>、<paramref name="entity"/>が<see langword="null"/>です。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
     Task UpdateAsync(string owner, string name, string branch, BranchProtection entity, CancellationToken cancellationToken = default);
@@ -33,7 +33,7 @@ public interface IBranchProtectionClient
     /// <para>詳しくは、<a href="https://docs.github.com/ja/rest/branches/branch-protection?apiVersion=2022-11-28#delete-branch-protection">APIドキュメント</a>を参照してください。</para>
     /// </remarks>
     /// <returns>このメソッドが完了すると、オブジェクトまたは値は返されません。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>がnullです。</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が<see langword="null"/>です。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="branch"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
     Task DeleteAsync(string owner, string name, string branch, CancellationToken cancellationToken = default);
