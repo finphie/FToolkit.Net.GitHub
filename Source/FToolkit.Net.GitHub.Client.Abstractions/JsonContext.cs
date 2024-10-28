@@ -15,6 +15,6 @@ namespace FToolkit.Net.GitHub.Client;
 [JsonSerializable(typeof(Repository))]
 [JsonSerializable(typeof(BranchProtection))]
 [JsonSerializable(typeof(RepositoryWorkflowPermissions))]
-[JsonSerializable(typeof(Secret))]
 [JsonSerializable(typeof(PublicKey))]
+[JsonSerializable(typeof(Secret))]
 public sealed partial class JsonContext : JsonSerializerContext;
