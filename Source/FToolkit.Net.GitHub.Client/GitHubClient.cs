@@ -15,7 +15,7 @@ public sealed partial class GitHubClient : IGitHubClient
     /// <see cref="GitHubClient"/>クラスの新しいインスタンスを初期化します。
     /// </summary>
     /// <param name="client"><see cref="HttpClient"/>クラスのインスタンス</param>
-    /// <exception cref="ArgumentNullException"><paramref name="client"/>が<see langword="null"/>です。</exception>"
+    /// <exception cref="ArgumentNullException"><paramref name="client"/>が<see langword="null"/>です。</exception>
     public GitHubClient(HttpClient client)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -34,9 +34,26 @@ public sealed partial class GitHubClient : IGitHubClient
     /// <summary>
     /// <see cref="GitHubClient"/>クラスのインスタンスを生成します。
     /// </summary>
+    /// <param name="token">GitHub APIのトークン</param>
+    /// <returns><see cref="GitHubClient"/>クラスのインスタンスを返します。</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="token"/>が<see langword="null"/>です。</exception>
+    /// <exception cref="ArgumentException"><paramref name="token"/>が空です。</exception>
+    public static GitHubClient Create(string token)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(token);
+
+        var client = CreateHttpClient();
+        client.ConfigureHttpClient(token);
+
+        return new(client);
+    }
+
+    /// <summary>
+    /// <see cref="GitHubClient"/>クラスのインスタンスを生成します。
+    /// </summary>
     /// <param name="credentials">GitHub APIの認証に必要な資格情報</param>
     /// <returns><see cref="GitHubClient"/>クラスのインスタンスを返します。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="credentials"/>が<see langword="null"/>です。</exception>"
+    /// <exception cref="ArgumentNullException"><paramref name="credentials"/>が<see langword="null"/>です。</exception>
     public static GitHubClient Create(Credentials credentials)
     {
         ArgumentNullException.ThrowIfNull(credentials);
