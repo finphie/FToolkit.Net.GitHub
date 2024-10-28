@@ -1,4 +1,5 @@
-﻿using FToolkit.Net.GitHub.Client.Actions.Permissions;
+﻿using System.Net.Http.Json;
+using FToolkit.Net.GitHub.Client.Actions.Permissions;
 
 namespace FToolkit.Net.GitHub.Client;
 
@@ -8,12 +9,14 @@ namespace FToolkit.Net.GitHub.Client;
 partial class GitHubClient : IPermissionsClient
 {
     /// <inheritdoc/>
-    Task IPermissionsClient.SetDefaultWorkflowPermissionsAsync(string owner, string name, RepositoryWorkflowPermissions entity, CancellationToken cancellationToken)
+    async Task IPermissionsClient.SetDefaultWorkflowPermissionsAsync(string owner, string name, RepositoryWorkflowPermissions entity, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentNullException.ThrowIfNull(entity);
 
-        return PutAsJsonAsync($"/repos/{owner}/{name}/actions/permissions/workflow", entity, JsonContext.Default.RepositoryWorkflowPermissions, cancellationToken);
+        var response = await _client.PutAsJsonAsync($"/repos/{owner}/{name}/actions/permissions/workflow", entity, JsonContext.Default.RepositoryWorkflowPermissions, cancellationToken)
+            .ConfigureAwait(false);
+        response.EnsureSuccessStatusCode();
     }
 }

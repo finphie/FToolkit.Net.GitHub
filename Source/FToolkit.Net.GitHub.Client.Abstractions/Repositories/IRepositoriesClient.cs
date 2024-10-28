@@ -16,7 +16,7 @@ public interface IRepositoriesClient
     /// <para>詳しくは、<a href="https://docs.github.com/ja/rest/repos/repos?apiVersion=2022-11-28#update-a-repository">APIドキュメント</a>を参照してください。</para>
     /// </remarks>
     /// <returns>このメソッドが完了すると、オブジェクトまたは値は返されません。</returns>
-    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="entity"/>がnullです。</exception>
+    /// <exception cref="ArgumentNullException"><paramref name="owner"/>または<paramref name="name"/>、<paramref name="entity"/>が<see langword="null"/>です。</exception>
     /// <exception cref="ArgumentException"><paramref name="owner"/>または<paramref name="name"/>が空です。</exception>
     /// <exception cref="HttpRequestException">HTTPリクエストに失敗しました。</exception>
     Task UpdateAsync(string owner, string name, Repository entity, CancellationToken cancellationToken = default);
