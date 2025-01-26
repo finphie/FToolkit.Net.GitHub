@@ -2,7 +2,7 @@
 
 [![Build(.NET)](https://github.com/finphie/FToolkit.Net.GitHub/actions/workflows/build-dotnet.yml/badge.svg)](https://github.com/finphie/FToolkit.Net.GitHub/actions/workflows/build-dotnet.yml)
 [![NuGet](https://img.shields.io/nuget/v/FToolkit.Net.GitHub?color=0078d4&label=NuGet)](https://www.nuget.org/packages/FToolkit.Net.GitHub/)
-[![Azure Artifacts](https://feeds.dev.azure.com/finphie/7af9aa4d-c550-43af-87a5-01539b2d9934/_apis/public/Packaging/Feeds/DotNet/Packages/ee0345dd-768f-4ce4-a59d-70f41b5f99e0/Badge)](https://dev.azure.com/finphie/Main/_artifacts/feed/DotNet/NuGet/FToolkit.Net.GitHub?preferRelease=true)
+[![Azure Artifacts](https://feeds.dev.azure.com/finphie/7af9aa4d-c550-43af-87a5-01539b2d9934/_apis/public/Packaging/Feeds/DotNet/Packages/83ebb2f6-41b9-4e74-9d9f-fdafdff4d36d/Badge)](https://dev.azure.com/finphie/Main/_artifacts/feed/DotNet/NuGet/FToolkit.Net.GitHub?preferRelease=true)
 
 GitHub APIクライアントです。
 
