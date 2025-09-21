@@ -30,6 +30,18 @@ public sealed partial class GitHubClient : IGitHubClient
     /// <summary>
     /// <see cref="GitHubClient"/>クラスのインスタンスを生成します。
     /// </summary>
+    /// <returns><see cref="GitHubClient"/>クラスのインスタンスを返します。</returns>
+    public static GitHubClient Create()
+    {
+        var client = CreateHttpClient();
+        client.ConfigureHttpClient();
+
+        return new(client);
+    }
+
+    /// <summary>
+    /// <see cref="GitHubClient"/>クラスのインスタンスを生成します。
+    /// </summary>
     /// <param name="token">GitHub APIのトークン</param>
     /// <returns><see cref="GitHubClient"/>クラスのインスタンスを返します。</returns>
     /// <exception cref="ArgumentNullException"><paramref name="token"/>が<see langword="null"/>です。</exception>
