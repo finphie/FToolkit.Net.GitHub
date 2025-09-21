@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Branches.BranchProtection;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// リポジトリのブランチ保護に関する操作を提供するインターフェイスです。

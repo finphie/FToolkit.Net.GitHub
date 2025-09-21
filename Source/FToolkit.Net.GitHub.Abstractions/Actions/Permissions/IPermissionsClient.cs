@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Actions.Permissions;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// GitHub Actionsのパーミッションに関する操作を提供するクライアントです。

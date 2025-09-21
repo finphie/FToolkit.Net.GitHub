@@ -13,6 +13,6 @@ public sealed record Credentials(AuthenticationType Type, string Token)
         {
             AuthenticationType.Token => $"Token {Token}",
             AuthenticationType.Bearer => $"Bearer {Token}",
-            _ => throw new ArgumentOutOfRangeException(nameof(Type))
+            _ => string.Empty
         };
 }

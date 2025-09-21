@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Branches.BranchProtection;
 
 namespace FToolkit.Net.GitHub;
 
@@ -28,7 +27,7 @@ partial class GitHubClient : IBranchProtectionClient
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentException.ThrowIfNullOrEmpty(branch);
 
-        var response = await _client.DeleteAsync($"/repos/{owner}/{name}/branches/{branch}/protection", cancellationToken)
+        var response = await _client.DeleteAsync(new Uri($"/repos/{owner}/{name}/branches/{branch}/protection"), cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }

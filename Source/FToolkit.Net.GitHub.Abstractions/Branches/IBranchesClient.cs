@@ -1,6 +1,4 @@
-﻿using FToolkit.Net.GitHub.Branches.BranchProtection;
-
-namespace FToolkit.Net.GitHub.Branches;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// ブランチに関する操作を提供するインターフェイスです。

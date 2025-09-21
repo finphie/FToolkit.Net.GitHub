@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Repositories;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// セキュリティ機能と分析機能に関する設定を表すクラスです。

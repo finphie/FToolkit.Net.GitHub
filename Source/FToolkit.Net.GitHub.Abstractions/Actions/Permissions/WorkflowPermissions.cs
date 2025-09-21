@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FToolkit.Net.GitHub.Actions.Permissions;
+namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// ワークフローのパーミッション。
