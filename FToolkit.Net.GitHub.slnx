@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Source/FToolkit.Net.GitHub.Abstractions/FToolkit.Net.GitHub.Abstractions.csproj" />
+  <Project Path="Source/FToolkit.Net.GitHub/FToolkit.Net.GitHub.csproj" />
+</Solution>

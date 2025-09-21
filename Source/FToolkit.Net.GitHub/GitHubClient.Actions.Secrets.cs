@@ -2,9 +2,9 @@
 
 namespace FToolkit.Net.GitHub;
 
-/// <summary>
+/// <content>
 /// <see cref="ISecretsClient"/>を実装する部分クラスです。
-/// </summary>
+/// </content>
 partial class GitHubClient : ISecretsClient
 {
     /// <inheritdoc/>
