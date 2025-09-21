@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using FToolkit.Net.GitHub.Branches.BranchProtection;
 
 namespace FToolkit.Net.GitHub;
 

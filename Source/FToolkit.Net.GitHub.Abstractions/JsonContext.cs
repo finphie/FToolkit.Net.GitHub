@@ -1,8 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using FToolkit.Net.GitHub.Actions.Permissions;
-using FToolkit.Net.GitHub.Actions.Secrets;
-using FToolkit.Net.GitHub.Branches.BranchProtection;
-using FToolkit.Net.GitHub.Repositories;
 
 namespace FToolkit.Net.GitHub;
 

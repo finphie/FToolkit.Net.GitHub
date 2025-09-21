@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FToolkit.Net.GitHub.Repositories;
+namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// スカッシュマージにおけるコミットタイトルの種類。

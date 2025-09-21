@@ -1,7 +1,4 @@
-﻿using FToolkit.Net.GitHub.Actions.Permissions;
-using FToolkit.Net.GitHub.Actions.Secrets;
-
-namespace FToolkit.Net.GitHub.Actions;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// GitHub Actionsに関する操作を提供するクライアントです。

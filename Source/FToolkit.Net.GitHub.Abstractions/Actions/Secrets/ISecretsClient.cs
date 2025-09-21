@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Actions.Secrets;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// GitHub Actionsのシークレットに関する操作を提供するインターフェイスです。

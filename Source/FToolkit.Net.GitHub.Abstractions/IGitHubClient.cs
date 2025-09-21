@@ -1,8 +1,4 @@
-﻿using FToolkit.Net.GitHub.Actions;
-using FToolkit.Net.GitHub.Branches;
-using FToolkit.Net.GitHub.Repositories;
-
-namespace FToolkit.Net.GitHub;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// GitHub APIのクライアントに関するインターフェイスです。

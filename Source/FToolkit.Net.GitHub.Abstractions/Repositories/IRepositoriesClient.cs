@@ -1,4 +1,4 @@
-﻿namespace FToolkit.Net.GitHub.Repositories;
+﻿namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// リポジトリに関する操作を提供するインターフェイスです。

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FToolkit.Net.GitHub.Branches.BranchProtection;
+namespace FToolkit.Net.GitHub;
 
 /// <summary>
 /// ブランチ保護に関する設定を表すクラスです。
