@@ -24,7 +24,7 @@ dotnet add package FToolkit.Net.GitHub -s https://pkgs.dev.azure.com/finphie/Mai
 
 ## サポートフレームワーク
 
-- .NET 9
+- .NET 10
 
 ## 作者
 
