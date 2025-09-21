@@ -6,7 +6,7 @@
 partial class GitHubClient : ILicensesClient
 {
     /// <inheritdoc/>
-    public async Task<string> GetLicenseContentAsync(string owner, string name, CancellationToken cancellationToken = default)
+    async Task<string> ILicensesClient.GetLicenseContentAsync(string owner, string name, CancellationToken cancellationToken)
     {
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);

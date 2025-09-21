@@ -27,6 +27,9 @@ public sealed partial class GitHubClient : IGitHubClient
     /// <inheritdoc/>
     public IActionsClient Actions => this;
 
+    /// <inheritdoc/>
+    public ILicensesClient Licenses => this;
+
     /// <summary>
     /// <see cref="GitHubClient"/>クラスのインスタンスを生成します。
     /// </summary>
