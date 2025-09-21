@@ -2,9 +2,9 @@
 
 namespace FToolkit.Net.GitHub;
 
-/// <summary>
+/// <content>
 /// <see cref="IRepositoriesClient"/>を実装する部分クラスです。
-/// </summary>
+/// </content>
 partial class GitHubClient : IRepositoriesClient
 {
     /// <inheritdoc/>
