@@ -16,12 +16,6 @@ FToolkit.Net.GitHubは、シンプルさやAOTに考慮して実装されたGitH
 
 ## インストール
 
-### NuGet（正式リリース版）
-
-```shell
-dotnet add package FToolkit.Net.GitHub
-```
-
 ### Azure Artifacts（開発用ビルド）
 
 ```shell
