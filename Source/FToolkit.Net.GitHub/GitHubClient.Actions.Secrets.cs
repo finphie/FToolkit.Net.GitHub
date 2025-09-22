@@ -13,7 +13,8 @@ partial class GitHubClient : ISecretsClient
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
 
-        var response = await _client.GetFromJsonAsync($"/repos/{owner}/{name}/actions/secrets/public-key", JsonContext.Default.PublicKey, cancellationToken)
+        var url = new Uri($"/repos/{owner}/{name}/actions/secrets/public-key", UriKind.Relative);
+        var response = await _client.GetFromJsonAsync(url, JsonContext.Default.PublicKey, cancellationToken)
             .ConfigureAwait(false);
 
         return response ?? throw new InvalidOperationException("The response from the GitHub API was null.");
@@ -27,7 +28,8 @@ partial class GitHubClient : ISecretsClient
         ArgumentException.ThrowIfNullOrEmpty(secretName);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PutAsJsonAsync($"/repos/{owner}/{name}/actions/secrets/{secretName}", entity, JsonContext.Default.Secret, cancellationToken)
+        var url = new Uri($"/repos/{owner}/{name}/actions/secrets/{secretName}", UriKind.Relative);
+        var response = await _client.PutAsJsonAsync(url, entity, JsonContext.Default.Secret, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }

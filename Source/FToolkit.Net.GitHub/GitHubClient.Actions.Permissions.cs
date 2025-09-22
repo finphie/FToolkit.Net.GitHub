@@ -14,7 +14,8 @@ partial class GitHubClient : IPermissionsClient
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PutAsJsonAsync($"/repos/{owner}/{name}/actions/permissions/workflow", entity, JsonContext.Default.RepositoryWorkflowPermissions, cancellationToken)
+        var url = new Uri($"/repos/{owner}/{name}/actions/permissions/workflow", UriKind.Relative);
+        var response = await _client.PutAsJsonAsync(url, entity, JsonContext.Default.RepositoryWorkflowPermissions, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }

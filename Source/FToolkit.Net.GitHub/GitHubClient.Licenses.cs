@@ -11,7 +11,8 @@ partial class GitHubClient : ILicensesClient
         ArgumentException.ThrowIfNullOrEmpty(owner);
         ArgumentException.ThrowIfNullOrEmpty(name);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, new Uri($"repos/{owner}/{name}/license"));
+        var url = new Uri($"repos/{owner}/{name}/license", UriKind.Relative);
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
         request.Headers.Add("Accept", "application/vnd.github.raw+json");
 
         var response = await _client.SendAsync(request, cancellationToken).ConfigureAwait(false);
