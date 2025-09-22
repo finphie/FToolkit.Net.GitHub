@@ -15,7 +15,8 @@ partial class GitHubClient : IBranchProtectionClient
         ArgumentException.ThrowIfNullOrEmpty(branch);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PutAsJsonAsync($"/repos/{owner}/{name}/branches/{branch}/protection", entity, JsonContext.Default.BranchProtection, cancellationToken)
+        var url = new Uri($"/repos/{owner}/{name}/branches/{branch}/protection", UriKind.Relative);
+        var response = await _client.PutAsJsonAsync(url, entity, JsonContext.Default.BranchProtection, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }
@@ -27,8 +28,8 @@ partial class GitHubClient : IBranchProtectionClient
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentException.ThrowIfNullOrEmpty(branch);
 
-        var response = await _client.DeleteAsync(new Uri($"/repos/{owner}/{name}/branches/{branch}/protection"), cancellationToken)
-            .ConfigureAwait(false);
+        var url = new Uri($"/repos/{owner}/{name}/branches/{branch}/protection", UriKind.Relative);
+        var response = await _client.DeleteAsync(url, cancellationToken).ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }
 }

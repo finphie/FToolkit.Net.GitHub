@@ -14,7 +14,8 @@ partial class GitHubClient : IRepositoriesClient
         ArgumentException.ThrowIfNullOrEmpty(name);
         ArgumentNullException.ThrowIfNull(entity);
 
-        var response = await _client.PatchAsJsonAsync($"/repos/{owner}/{name}", entity, JsonContext.Default.Repository, cancellationToken)
+        var url = new Uri($"/repos/{owner}/{name}", UriKind.Relative);
+        var response = await _client.PatchAsJsonAsync(url, entity, JsonContext.Default.Repository, cancellationToken)
             .ConfigureAwait(false);
         response.EnsureSuccessStatusCode();
     }
