@@ -10,7 +10,10 @@ public static class GitHubClientExtensions
     /// </summary>
     /// <param name="client"><see cref="HttpClient"/>クラスのインスタンス</param>
     public static void ConfigureHttpClient(this HttpClient client)
-        => client.BaseAddress = ApiEndpoints.GitHubApiUrl;
+    {
+        client.BaseAddress = ApiEndpoints.GitHubApiUrl;
+        client.AddGitHubClientHeader();
+    }
 
     /// <summary>
     /// <see cref="HttpClient"/>クラスにGitHub APIの設定を適用します。
@@ -35,7 +38,7 @@ public static class GitHubClientExtensions
     {
         ArgumentNullException.ThrowIfNull(credentials);
 
-        client.ConfigureHttpClient();
+        client.BaseAddress = ApiEndpoints.GitHubApiUrl;
         client.AddGitHubClientHeader(credentials);
     }
 
