@@ -38,8 +38,8 @@ public static class GitHubClientExtensions
     {
         ArgumentNullException.ThrowIfNull(credentials);
 
-        client.BaseAddress = ApiEndpoints.GitHubApiUrl;
-        client.AddGitHubClientHeader(credentials);
+        client.ConfigureHttpClient();
+        client.AddGitHubClientAuthorizationHeader(credentials);
     }
 
     /// <summary>
@@ -77,6 +77,12 @@ public static class GitHubClientExtensions
         ArgumentNullException.ThrowIfNull(credentials);
 
         client.AddGitHubClientHeader();
+        client.AddGitHubClientAuthorizationHeader(credentials);
+    }
+
+    static void AddGitHubClientAuthorizationHeader(this HttpClient client, Credentials credentials)
+    {
+        ArgumentNullException.ThrowIfNull(credentials);
         client.DefaultRequestHeaders.Add("Authorization", credentials.ToString());
     }
 }
